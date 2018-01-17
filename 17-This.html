@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // para funcionar correctamente as chamadas a atributos dun obxecto hai que usar o operador this,
+        // porque se non o facemos ao compilador entende que se está chamando a unha variable global que
+        // non existe e dá erro
+        var persoa = {
+            nome: "Alexandre",
+            apelidos: "Insua Moreira",
+
+            imprimirNomeCompleto: function imprimirNomeCompleto(params) {
+                console.log("O nome completo é " + this.nome + " " + this.apelidos + ".")
+            },
+
+ // Obxectos dentro de obxectos. non se funciona o this nunha función dentro dun método
+            caseiro: {
+                nome:"Rubén",
+                custeMes:550,
+                calcularCusteAnual: function(){
+                    var custeAnual = this.custeMes * 12
+                    console.log(custeAnual)
+                },
+                calcularPrezoEspecial: function(){
+                  var  custeEspecial = self.custeMes -100
+                    console.log(custeEspecial)
+                    console.log(self.custeMes)
+                    console.log(self)
+
+                }
+            }
+
+        }
+
+        persoa.imprimirNomeCompleto()
+        persoa.caseiro.calcularCusteAnual()
+        persoa.caseiro.calcularPrezoEspecial()
+       
+
+    </script>
+</body>
+
+</html>

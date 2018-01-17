@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 5
+        a = 5.1234
+        console.log(a)
+
+        // devolve o número  con cantos decimais determinemoes
+        var b = a.toFixed(2) //5.12
+        console.log(b)
+
+        // idem, pero tendo en conta a parte enteira
+        var b = a.toPrecision(4)
+        console.log(b)
+
+        a = 51.1234
+        var b = a.toPrecision(4)
+        console.log(b)
+
+        // devolve o valor convertido a string
+        var b = a.toString // "5.1234"
+        console.log(b)
+
+        // NaN not a number
+
+        var a = 12
+        a = a + "palabra"
+        console.log(a) // concatena 12palabra
+
+        a = a * "palabra"
+        console.log(a) // non concatena: NaN
+
+        // convertir un texto a número
+        var c = "1234.54"
+        var a = c.valueOf()
+        console.log(a)
+
+        // usando un wrapper
+        a = new Number(c.valueOf())
+        console.log(a)
+        a = a.valueOf()
+        console.log(a)
+
+        a.toLocaleString
+    </script>
+</body>
+
+</html>

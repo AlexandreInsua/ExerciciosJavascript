@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+        // as funcións poden devolver:
+        // - tipos primitivos: int, float,  
+        // - obxectos
+        // - undefined
+        // - outras funcións 
+
+        // devolve un número aleatorio entre 0 e 1
+        function obterAleatorio() {
+            return Math.random();
+        }
+
+        function obterNome() {
+            return "Alexandre"
+        }
+
+        // Devolve un booleano
+        function eMaiorDeDez(num) {
+            if (num > 10) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        // devolve un obxecto
+        function creadorPersoa(nome, apelidos) {
+            return {
+                nome: nome,
+                apelido: apelidos
+            }
+        }
+
+        // Devolve unha función
+        function creadorFuncions() {
+            return function () {
+                console.log("Fun invocada, son unha función")
+            }
+        }
+
+        // devolve unha función que ten un parámetro
+        function creadorFuncions2(){
+            return function(nome){
+                console.log("Fun invocada, son unha función. Nome vale " + nome)
+            }
+        }
+
+        console.log(obterAleatorio())
+        console.log(obterNome())
+        console.log(eMaiorDeDez(100))
+        console.log(eMaiorDeDez(5))
+        var p = creadorPersoa("Rosa", "Ruiz Dominguez")
+        console.log(p)
+        console.log(p.nome)
+        var f = creadorFuncions()
+        f()
+
+        f  = creadorFuncions2()
+        f("Alexandre")
+
+
+    </Script>
+</body>
+
+</html>

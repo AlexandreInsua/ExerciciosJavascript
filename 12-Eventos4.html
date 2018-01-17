@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="cambiaFondo('green')">Verde</button>
+    <button onclick="cambiaFondo('red')">Vermello</button>
+    <button onclick="cambiaFondo('blue')">Azul</button>
+    <button onclick="cambiaFondo('orange')">Laranxa</button>
+
+    <section id="caixa" style="width:200px; height:200px; background: black"></section>
+
+    <script>
+    function cambiaFondo (color){
+        var caixa = document.getElementById("caixa")
+        caixa.style.background = color
+    }</script>
+</body>
+
+</html>

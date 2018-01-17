@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Persoa(nome, apelidos) {
+            this.nome = nome
+            this.apelidos = apelidos
+
+            // método de obxecto
+            this.imprimirNomeCompleto = function () {
+                console.log("O nome completo é " + this.nome + " " + this.apelidos + ".")
+            }
+        }
+
+        var user = new Persoa("Manuel", "Gómez")
+
+        // Imos crear un prototipo
+        Persoa.prototype.pais = "Transnitria" // Engadimos un atributo máis en tempo de execución comoo prototipo.
+        // a partir desde momento todas as novas instancias terán este atributo con este valor.
+    </script>
+</body>
+
+</html>

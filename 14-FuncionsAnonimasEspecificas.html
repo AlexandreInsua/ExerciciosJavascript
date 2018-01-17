@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function imprimeSaudo(nome) {
+            console.log("Que tal, " + nome + "?");
+        }
+
+        imprimeSaudo("Alexandre");
+
+
+        // Función anónima, aquela á que non se lle asigna varable algunha
+        // só se pode usar esta vez
+        function imprimir(fn) {
+            fn();
+        }
+
+        imprimir(
+            function () {
+                console.log("Isto é unha función anónima")
+            }
+        )
+
+        // Unha función explícita é aquela que se asigna á declaracón da explícita
+        // pódese reutilizar 
+        var aMinhaFunciocinha = function (){
+            console.log("Isto é unha función explícita")
+        }
+
+        imprimir(aMinhaFunciocinha)
+
+    </script>
+</body>
+
+</html>

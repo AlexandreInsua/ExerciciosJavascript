@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = "Alexandre"
+        var b = new String("Alexandre")
+        console.log(a)
+        console.log(b) // a saída é un obxecto co array de caracteres
+        console.log(b.valueOf)
+
+        // String son arrays de caracteres.
+        console.log(a[0]) // mostra "A"
+
+
+        var b = a.toUpperCase()
+        var c = b.toLowerCase()
+        console.log(a)
+        console.log(b)
+        console.log(c)
+
+        // devolve a posicion da primeira ocorrencia
+        var d  = a.indexOf("e") //
+        console.log(d)
+
+        // devovle a posiciono da última ocorrencia
+        var d  = a.lastIndexOf("e") //
+        console.log(d)
+
+        // substring
+        // primeira variante
+        var d  = a.substring(3) //xandre
+        console.log(d)
+
+        // segunda variante
+        var d  = a.substring(0,4) //xandre
+        console.log(d)
+
+        // funcion split - separa nun array tendo en conta o caracter de separacion indicado
+        var a = "Alexandre Insua Moreira"
+        console.log(a)
+        var array = a.split(" ")
+        console.log(array)
+
+        // ISTO XA NON SE USA CON JAVASCRIPT,  PARA ISTO ÚSASE CSS
+        // italics, blink, bold, etc..
+        var a = "alexandre"
+        var b = a.italics() // <i>alexandre</i>
+        document.write(b)
+
+
+
+    </script>
+</body>
+
+</html>

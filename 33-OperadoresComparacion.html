@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 10
+        var b = new Number(10)
+        var c = new Number(10)
+        var d = c
+
+        console.log(a == b)    // true, compara o valor das variables
+        console.log(a === b)  // false, compara o valor e se é o mesmo obxecto das variables
+        console.log(b == c)     // false, están apuntando á diferentes direccions de memora
+        console.log(b === c)     // false, son obxectos diferentes
+        console.log(d == c)     // apuntan á mesma dirección de memoria, polo que fan referencia ao mesmo obxecto
+        console.log(d === C)    // idem, 
+        
+
+
+    </script>
+</body>
+
+</html>

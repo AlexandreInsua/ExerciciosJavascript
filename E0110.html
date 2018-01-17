@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function sumarArray(lista) {
+            var contador = 0
+            /*  for (var i = 0; i < lista.lenght; i++) {
+                  contador = contador + lista[i]
+              }*/
+
+            for (i in lista) {
+                contador += lista[i]
+            }
+            return contador
+        }
+
+        var total = sumarArray([1, 2, 5, 1])
+        console.log(total)
+
+        // con prototipos
+        Array.prototype.sumar = function () {
+            var contador = 0
+            for (var i = 0; i < lista.lenght; i++) {
+                contador = contador + lista[i]
+            }
+            return contador
+        }
+
+        var total = [1, 2, 5, 1].sumar()
+        console.log(total)
+    </script>
+</body>
+
+</html>

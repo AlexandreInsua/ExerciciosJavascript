@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Crear un obxecto en Js que represente os datos dun comercial
+        // 1ª forma. Mediante as chaves
+        var comercial = {
+            nome: "Ana",
+            apelidos: "Gamallo",
+            soldoBaseMensual: 1000,
+            cantidadeVentas: 22000,
+            comision: 0.05,
+            calcularSoldoMensual: function () {
+                return this.soldoBaseMensual + this.cantidadeVentas * this.comision
+            },
+            calcularSoldoAnual: function () {
+                return (this.soldoBaseMensual + this.cantidadeVentas * this.comision) * 12
+            }
+        }
+
+        console.log(comercial.nome)
+        console.log(comercial.calcularSoldoMensual())
+        console.log(comercial.calcularSoldoAnual())
+
+        // 2ª forma. Mediante unha clase  e instanciación
+        var ClaseComercial = function (nome, apelidos, soldoBaseMensual, ventas, comision) {
+            this.nome = nome;
+            this.apelidos = apelidos;
+            this.soldoBaseMensual = soldoBaseMensual;
+            this.ventas = ventas;
+            this.comision = comision;
+            this.calcularSoldoMensual = function () {
+                return this.soldoBaseMensual + this.ventas * this.comision;
+            }
+            this.calcularSoldoAnual = function () {
+                return (this.soldoBaseMensual + this.ventas * this.comision) * 12;
+            }
+        }
+
+        var c = new ClaseComercial("Ana", "Gamallo", 1000, 22000, 0.05)
+        
+        console.log(c.nome)
+       console.log(c.calcularSoldoMensual())
+      console.log(c.calcularSoldoAnual())
+
+    </script>
+</body>
+
+</html>

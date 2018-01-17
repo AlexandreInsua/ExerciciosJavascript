@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function identifica(parametro){
+        console.log(typeof(parametro))
+    }
+
+identifica(1) // number
+identifica("Alexendre") // string
+identifica(false) // boolean
+identifica({}) // object
+identifica({nome:"Alexandre", cidade:"Vigo"}) // object
+
+function Animal (){
+        this.nome = "Gato";
+        this.raza = "Siamés";
+        this.mianhar = function(){
+            console.log("Miiiiauuuuu!")
+        }
+} 
+identifica(new Animal)  // object
+
+identifica(function(){}) // function 
+
+identifica() // undefined
+    
+    </script>
+</body>
+</html>

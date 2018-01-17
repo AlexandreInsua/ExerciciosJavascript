@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = true
+        var b = false
+        var c = new Boolean() // valor por defecto false
+        console.log(c)
+        var c = new Boolean(-1) // true
+        console.log(c)
+        var c = new Boolean(0) // false
+        console.log(c)
+        var c = new Boolean(1) // true
+        console.log(c)
+        var c = new Boolean("Insua") // true
+        console.log(c)
+        var c = new Boolean(false) // excepto cando se lle pasa 0 ou nada, devolve true
+        console.log(c)
+
+        var a = new Boolean(0)
+        // é importante acceder ao valor do booleano, senón accede á posición de memoria , un número
+        if (a.valueOf()) {
+            console.log("verdadeiro")
+         } else {
+             console.log("falso")
+         }
+
+    </script>
+</body>
+
+</html>

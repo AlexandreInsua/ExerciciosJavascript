@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!--forma moi cutre de asignar un evento -->
+    <a href="javascript:ligazon(100)">Ligazón 1</a><br>
+
+    forma cutre de asignar un evento
+    <a href="#" onclick="ligazon(100)">Ligazón2</a><br>
+
+    forma maís adecuada. Leva un id
+
+    <a id="ligazon3" href="">Ligazón 3</a>br
+    <script>
+        function ligazon(valor) {
+            alert("Fixeches click e o valor é: " + valor);
+        }
+
+        function ligazon03() {
+            alert("Fixeches click e o valor é: ");
+        }
+
+        // programación para a ligazón 3
+        // recuperamos o elemento pola id
+        var ligazon3 = document.getElementById("ligazon3");
+        // asignámoslle un listener
+        // o nome da función no leva 
+        ligazon3.addEventListener("click", ligazon03)
+    </script>
+</body>
+
+</html>

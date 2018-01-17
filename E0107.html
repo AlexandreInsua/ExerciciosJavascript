@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // primeira forma. Creando o obxecto en tempo real
+        var ordenador = {
+            marca: "Asus",
+            modelo: "ixus",
+            ram: "8",
+            estado: false,
+
+            arrancar : function arrancar() {
+                this.estado = true
+            },
+            apagar : function apagar() {
+                this.estado = false
+            }
+        }
+
+        console.log(ordenador.marca)
+        console.log(ordenador.estado)
+        console.log(ordenador.arrancar())
+        console.log(ordenador.estado)
+        console.log(ordenador.apagar())
+        console.log(ordenador.estado)
+
+        // 2 creado unha clase
+
+        function Ordenador() {
+            this.marca = "HP"
+            this.modelo = "Pavillion"
+            this.ram = 4
+            this.estado = false
+            this.arrancar = function arrancar() {
+                this.estado = true
+            }
+            this.apagar = function apagar() {
+                this.estado = false
+            }
+        }
+
+        var unOrdenador = new Ordenador()
+        console.log(unOrdenador.marca)
+        console.log(unOrdenador.estado)
+        unOrdenador.arrancar()
+        console.log(unOrdenador.estado)
+        unOrdenador.apagar()
+        console.log(unOrdenador.estado)
+
+    </script>
+</body>
+
+</html>

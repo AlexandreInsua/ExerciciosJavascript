@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Produto(nome, ) {
+            this.nome = nome;
+        }
+        var lapiz = new Produto("lápiz")
+        lapiz.precio = 333
+        console.log(lapiz.nome + ": " + lapiz.precio)
+
+        var boli = new Produto("boli")
+        boli.precio = 222
+        console.log(boli.nome + ": " + boli.precio)
+
+        // a partir deste momento todas as instancias van ter un atributo partillado entre todas elas chamadas.
+        Produto.prototype.precio = 100
+        Produto.precio = 50
+        console.log(lapiz.nome + ": " + lapiz.precio)
+        console.log(boli.nome + ": " + boli.precio)
+        console.log(Produto.prototype.precio)
+        console.log(Produto.precio)
+    </script>
+</body>
+
+</html>

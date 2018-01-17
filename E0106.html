@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function recogedor(valor){
+	if(valor instanceof Object)
+		valor.numero=9
+	else if (valor instanceof Number)
+		valor=7
+}
+var numero = 8
+recogedor(numero) 
+
+var objeto = {
+	numero:10
+}
+recogedor(objeto) 
+
+console.log(numero) // 8, os tipos primitivos son pasados por valor, polo que a función non altera a súa función
+console.log(objeto.numero) // 9, porque os atributos dos obxectos son pasados por referencia polo que si altera o seu valor
+
+    </script>
+</body>
+</html>

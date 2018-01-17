@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array = [6, 4, 3, 8, 2, 2]
+        console.log(array[0])
+
+        console.log(array[10]) // undefined
+        console.log(array)
+
+        // dálle a volta ao array
+        array.reverse()
+        console.log(array)
+
+        // executa unha función por cada elemento do array
+        array = [2, 5, 1]
+        console.log(array)
+        // isto está obsoleto, agora fai cunha lambda
+        array = array.map(function (elem) {
+            elem = elem * elem;
+            return elem
+        })
+
+        console.log(array)
+
+        // une elementos dun array un string separados por comas
+        console.log(array.join())
+
+        // une elementos dun array un string separados por punto e coma
+        console.log(array.join(";"))
+
+        // separa un texto e o mete dentro dun array
+        var cadea = "4,7,3"
+        array = cadea.split(",")
+        console.log(array)
+
+        // engadir un elemento ao final
+        array = [2, 5, 1]
+        console.log(array)
+        array.push(9)
+        console.log(array)
+
+        // engadir ao principio
+        array.unshift(1)
+        console.log(array)
+
+        // quita o último elemento e o devolve
+        var elementoEliminado = array.pop()
+        console.log(array)
+        console.log(elementoEliminado)
+
+        // elimina elementos 
+        array = [1, 2, 3, 4]
+        console.log(array)
+        array.splice(1, 2) // 1,4
+        console.log(array)
+
+        // tamén tame vale para substituír
+        array.splice(0, 1, 0, 1, 2, 3)
+        console.log(array)
+
+        // item, para insertar ao pricipio
+        array.splice(0, 0, -1)
+        console.log(array)
+
+        // engadir na segunda posición
+        array.splice(2, 0, 1.5)
+        console.log(array)
+
+        // slice optén rangos do array
+
+        var a = array.slice(3, 5)
+        var b = array.slice(0, 2)
+        var c = array.slice(1, 6)
+        var d = array.slice(3, )
+        //var e = array.slice(,4)
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+
+        // tamaño do array
+        console.log(array.length)
+
+        // os array cargan con todo
+
+        array = ["orballo", 
+        true,
+         4, 
+         4.2, 
+         [1, 2, 3, 4],
+         { nome: "Alexandre", apelidos: "Insua" }, 
+         function () { return "hola" }, 
+         function (nome) { return "Ola, " + nome }, 
+         function () { return this[5].nome }]
+
+         console.log(array)
+         console.log(array[0])
+         console.log(array[5].apelidos)
+         console.log(array[6]())
+         console.log(array[7]("Xose"))
+         console.log(array[8]())
+         console.log(array[4][3])
+    </script>
+</body>
+
+</html>

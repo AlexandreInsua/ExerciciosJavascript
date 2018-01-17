@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // determina a data de hoxe
+    var hoxe  = new Date() // crea un obxecto doa data do navegador do cliente
+console.log(hoxe)
+    var dataPersoal = new Date(2017,01,16,12,07,00,00)
+    console.log(dataPersoal.getFullYear())
+    console.log(dataPersoal.getTimezoneOffset())
+
+    var inicio = new Date()
+    for (var i=0; i<10000; i++)
+    {console.log("ola")}
+
+    var fin = new Date()
+
+    var duracion = fin.getTime() - inicio.getTime()
+    console.log(" A tarefa durou " + duracion /1000+"s")
+    </script>
+</body>
+</html>

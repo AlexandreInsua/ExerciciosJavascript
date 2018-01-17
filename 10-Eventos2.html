@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- forma cutre de implmentar o listener -->
+    <section id="a" onclick="mensaxe(this)" style="width:300px; height:200px; background:red; display:inline-block"></section>
+    <section id="b" onclick="mensaxe(this)" style="width:300px; height:200px; background:red; display:inline-block"></section>
+    <section id="c" onclick="mensaxe(this)" style="width:300px; height:200px; background:red; display:inline-block"></section>
+    <section id="d" onmouseover="sauda()" style="width:300px; height:200px; background:red; display:inline-block"></section>
+    
+    <br>
+    <form action="">
+        <input onclick="alert('Fixeches click')"  onchange="alert('cambiaches o contido da caixa')"
+            type="text" placeholder="escribe o teu mail">
+            <input onclick="alert('Fixeches click')"  onchange="alert('cambiaches o contido da caixa')"
+            type="text" placeholder="escribe o teu nome">
+    </form>
+
+    <br>
+
+
+</body>
+<script>
+    // funcións para a 
+    function mensaxe(seccion) {
+        var id = seccion.id;
+        alert("Pulsaches  na sección: " + id)
+    }
+
+    // función para  d
+    function sauda() {
+        alertalert('Pasaches por aquí')
+    }
+</script>
+
+</html>
