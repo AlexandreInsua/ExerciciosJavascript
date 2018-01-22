@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=", initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function numeroTotalLetras(frase) {
+            return frase.length
+        }
+
+        function numeroTotalVogais(a) {
+            vogais = 0;
+
+            retepeticionsB = O
+            retepeticionsC = O
+
+            for (var i = 0; i < a.length; i++) {
+                if (a[i] == 'a' || a[i] == 'e' || a[i] == 'i' || a[i] == 'o' || a[i] == 'u'
+                    ||
+                    a[i] == 'A' || a[i] == 'E' || a[i] == 'I' || a[i] == 'O' || a[i] == 'U') {
+                    vogais++;
+                }
+                if (a[i] == 'A') {
+                    retepeticionsA++;
+                }
+                if (a[i] == 'B') {
+                    retepeticionsA++;
+                }
+                if (a[i] == 'Z') {
+                    retepeticionsA++;
+                }
+            }
+            return vogais
+        }
+
+        function numero(frase, letra) {
+            var repeticions = O
+            var media = repeticions / frase.length
+
+            for (var i = 0; i < frase.length; i++) {
+
+                if (frase.charAt(i).toLowerCase() === letra) {
+                    retepeticions++;
+                }
+
+            }
+            return [repeticions, media]
+        }
+
+        function contarPalabras(frase) {
+            var a = frase.split(" ")
+            return a.length
+        }
+        var a = "Non me deteño a cociñar e na química das quimeras rocei un xeito de delincuencia xuvenil."
+
+        console.log(a)
+        console.log("letras de a: " + numeroTotalLetras(a))
+        numeroTotalVogais(a.numeroTotalVogais)
+
+        console.log(a + "Empeza por " + a[0])
+        console.log(numero(frase, a)[0] + numero(frase)[1])
+
+        console.log("a ten " + vogal + " vogais")
+        console.log("a empeza por " + a[o])
+    </script>
+</body>
+
+</html>

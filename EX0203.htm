@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h1>Exercicio 3: practicando Javascript</h1>
+        <input type="text" id="num1" />
+        <br>
+        <input type="text" id="num2" />
+        <br>
+        <!--input type="button" onclick="calcular()" value="Sumar"/-->
+        <input type="button"  value="Sumar" id="botonSumar"/>
+        <br>
+        <div id="resultado"></div>
+
+    </form>
+
+    <script>
+        function calcular() {
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+            var resultado = Number.parseFloat(num1) + Number.parseFloat(num2)
+            document.getElementById("resultado").innerHTML = resultado
+        }
+        var botonSumar = document.getElementById("botonSumar")
+        botonSumar.addEventListener("click", calcular)
+
+    </script>
+</body>
+
+</html>
