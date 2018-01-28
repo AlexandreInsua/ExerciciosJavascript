@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Exercicio 4: practicando javascript</h1>
+    <input type="text" id="num1" />
+    <br>
+    <select id="opcion">
+        <option value="sumar">sumar</option>
+        <option value="restar">restar</option>
+        <option value="multiplicar">multiplicar</option>
+        <option value="dividir">dividir</option>
+        <option value="potencia">potencia</option>
+        <option value="resto">resto</option>
+    </select>
+    <br>
+    <input type="text" id="num2" />
+    <br>
+    <input type="button" id="botonCalcular" value="Púlsame" />
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            var num1 = Number.parseFloat(document.getElementById("num1").value)
+            var num2 = Number.parseFloat(document.getElementById("num2").value)
+            var operacion = document.getElementById("opcion").value
+
+            if (operacion == "sumar") {
+                var resultado = num1 + num2
+            } else if (operacion == "restar") {
+                var resultado = num1 - num2
+            } else if (operacion == "multiplicar") {
+                var resultado = num1 * num2
+            } else if (operacion == "dividir") {
+                if (num2 == 0) {
+                    alert("Non se pode dividir entre 0. É unha indeterminación matemática")
+                } else{
+                    var resultado = num1 / num2
+                }
+            } else if (operacion == "potencia") {
+                var resultado = num1 ** num2
+            } else if (operacion == "resto") {
+                if (num2 == 0) {
+                    alert("Non se pode dividir entre 0. É unha indeterminación matemática")
+                } else{
+                    var resultado = num1 % num2
+                }
+            }
+            document.getElementById("resultado").innerHTML = resultado
+        }
+
+        var botonCalcular = document.getElementById("botonCalcular")
+        botonCalcular.addEventListener("click", calcular)
+    </script>
+</body>
+
+</html>
