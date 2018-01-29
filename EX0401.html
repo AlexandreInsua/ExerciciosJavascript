@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tachado{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="nomeTarefa" value="Agrega a túa tarefa">
+    <input type="button" id="agregarTarefa" value="Agregar Tarefa">
+    <ul id="listaTarefas">
+
+    </ul>
+
+    <script>
+        // así que como se adoita facer (pero con lamdas). Unha función anónima con función dentro
+        (function () {
+            var tarefa = document.getElementById("nomeTarefa")
+            var boton = document.getElementById("agregarTarefa")
+            var listaTarefas = document.getElementById("listaTarefas")
+
+            function eventoAgregarTarefa() {
+
+                // crear novos elementos
+                var li = document.createElement("li")
+                var a1 = document.createElement("a")
+                var a2 = document.createElement("a")
+
+                a1.setAttribute("href", "#")
+                a2.setAttribute("href", "#")
+                //   a1.addEventListener("click", eventoFinalizarTarefa)
+                //                a2.addEventListener("click", eventoQuitarTafefa)
+
+                var textoTarefa = document.createTextNode(tarefa.value)
+                var textoBorrar = document.createTextNode("(Borrar)")
+
+                // colocámolos
+                li.appendChild(a1)
+                li.appendChild(a2)
+                a1.appendChild(textoTarefa)
+                a2.appendChild(textoBorrar)
+                listaTarefas.appendChild(li)
+
+                // borramos o contido da caixa de texto
+                tarefa.value = ""
+            }
+            function eventoQuitarTarefa() {
+                listaTarefas.removeChild(this.parentNode)
+            }
+
+            function eventoFinalizarTarefa() {
+                if (this.className=="tachado")
+                {
+                    this.className=""
+                }else{
+                    this.className="tachado"
+                }
+                
+            }
+
+            boton.addEventListener("clic", eventoAgregarTarefa)
+        }())
+
+
+    </script>
+</body>
+
+</html>
