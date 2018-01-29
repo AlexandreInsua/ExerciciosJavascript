@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var Punto = function (x, y) {
+            this.x = x
+            this.y = y
+
+            this.mostrarPuntos = function () {
+                return "(" + this.x + "," + this.y + ")"
+            }
+
+            this.calcularDistancia = function (a, b) {
+                var dx = a  - this.x
+                var dy = b - this.y
+                var dx = Math.pow(dx)
+                var dy = Math.pow(dy)
+                var d = dx + dy
+                var d = Math.sqrt(d)
+
+                return d
+            }
+        }
+
+        var p = new Punto(3, 3)
+        console.log(p.mostrarPuntos())
+        var r = new Punto(0, 0)
+        console.log(r.mostrarPuntos())
+
+        console.log(p.calcularDistancia(0,0))
+    </script>
+</body>
+
+</html>
