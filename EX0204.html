@@ -23,9 +23,9 @@
     <br>
     <input type="text" id="num2" />
     <br>
-    <input type="button" id="botonCalcular" value="Púlsame" />
+    <input type="button" id="botonCalcular" value="Calcular" />
     <br>
-    <div id="resultado"></div>
+    <div id="resultado">...</div>
 
     <script>
         function calcular() {
@@ -41,9 +41,11 @@
                 var resultado = num1 * num2
             } else if (operacion == "dividir") {
                 if (num2 == 0) {
-                    alert("Non se pode dividir entre 0. É unha indeterminación matemática")
+                    alert("Non se pode dividir entre 0.\nÉ unha indeterminación matemática")     
                 } else{
                     var resultado = num1 / num2
+                    // mostra só 3 decimais
+                    resultado.toFixed(3)
                 }
             } else if (operacion == "potencia") {
                 var resultado = num1 ** num2
@@ -54,6 +56,38 @@
                     var resultado = num1 % num2
                 }
             }
+            
+            /* ALTERNATIVA CON SWITCH 
+            
+            switch (opcion.selectedIndex){
+            case 0:
+              var resultado = num1 + num2
+            break;
+            case 1:
+               var resultado = num1 - num2
+            break;
+            case 2:
+            var resultado = num1 * num2
+            break;
+            case 3:
+               if (num2 == 0) {
+                    alert("Non se pode dividir entre 0.\nÉ unha indeterminación matemática")
+                } else{
+                    var resultado = num1 / num2
+                    resultado.toFixed(3)
+                }
+            break;
+            case 4:
+                var resultado = num1 ** num2
+            break;
+            case 5:
+                 if (num2 == 0) {
+                    alert("Non se pode dividir entre 0. É unha indeterminación matemática")
+                } else{
+                    var resultado = num1 % num2
+                }
+            break;
+            */
             document.getElementById("resultado").innerHTML = resultado
         }
 
