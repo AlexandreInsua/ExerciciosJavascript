@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Alumno {
+            constructor(nome, apelidos, asignaturas) {
+                this.nome = nome
+                this.apelidos = apelidos
+                this.asignaturas = asignaturas
+            }
+        }
+
+        class Profesor {
+            constructor(nome, apelidos, asignaturas, salario) {
+                this.nome = nome
+                this.apelidos = apelidos
+                this.asignaturas = asignaturas
+                this.salario = salario
+            }
+        }
+
+        class PersoalAdministracion {
+            constructor(nome, apelidos, salario) {
+                this.nome = nome
+                this.apelidos = apelidos
+                this.salario = salario
+            }
+        }
+
+        var a1 = new Alumno("Isabel", "García Vilaboi", ["DIG", "AD", "SI"])
+        var a2 = new Alumno("Roberto", "Bermolén Gonzalez", ["DIG", "PSP", "PMM"])
+        var a3 = new Alumno("María", "Rodríguez Láncara", ["AD", "PSP", "SI"])
+        var a4 = new Alumno("Ana", "Outeriño López", ["PMM", "SI"])
+
+        var arrayAlum = { a1, a2, a3, a4 }
+        console.log(arrayAlum)
+
+        var p1 = new Profesor("Guillermo", "Garrido Teloi", ["DIG"], 1500)
+        var p2 = new Profesor("Mateo", "Boán Panisse", ["PSP", "SI"], 1700)
+        var p3 = new Profesor("Catalina", "Fofán Correa", ["LMSXI"], 1400)
+        var arrayProf = (p1, p2, p3)
+        console.log(arrayProf)
+
+        var pe1 = new PersoalAdministracion("Basilio", "Alonso Fernández", 1300)
+        var pe2 = new PersoalAdministracion("María", "Fernández Alonso", 1301)
+        var arrayPer = {pe1, pe2}
+        console.log(arrayPer)
+        arrayPer2  = arrayPer.sort()
+        console.log(arrayPer2)
+
+
+    </script>
+</body>
+
+</html>

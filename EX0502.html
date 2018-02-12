@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Animal {
+            constructor(nome) {
+                this.nome = nome
+
+                this.nacer = function nacer() {
+                    console.log(this.nome + " nace")
+                }
+                this.comer = function comer() {
+                    console.log(this.nome + " come")
+                }
+                this.morrer = function morrer() {
+                    console.log(this.nome + " morre")
+                }
+            }
+        }
+
+        class Leon extends Animal {
+            constructor(nome) {
+                super(nome)
+
+                this.ruxir = function ruxir() {
+                    console.log(this.nome + " ruxe")
+                }
+            }
+        }
+        var l = new Leon("Simba")
+        l.nacer()
+        l.comer()
+        l.ruxir()
+        l.morrer()
+    </script>
+</body>
+
+</html>
