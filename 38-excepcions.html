@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        
+        // lanzar unha exepcion manualmente
+    
+            try {var a = -1
+                if (a == 0) {
+                    throw "A miña excepción: non pode valer 0"
+                    console.log("a vale: " + a)
+                }
+                if (a== -1){
+                    throw{
+                        nome: "Error de -1",
+                        accion:"sair",
+                        codigo: "2344"
+                    }
+                }
+            } catch (e) {
+                console.log("hai unha excepción: " + e.nome)
+            } finally {
+                console.log("isto sempre se executa.")
+            }
+        
+        
+
+
+    </script>
+</body>
+
+</html>

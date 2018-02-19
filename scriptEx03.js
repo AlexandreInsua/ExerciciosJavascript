@@ -4,6 +4,7 @@
 var Punto = function (x, y) {
     this.x = x
     this.y = y
+    this.angulo = 0
     this.calcularDistancia = function (outroPunto) {
         var dx = outroPunto.x - this.x
         var dy = outroPunto.y - this.y
@@ -49,7 +50,7 @@ function pintarTodosPixeles(contexto, puntos) {
 
 function conectarConLinhas(contexto, puntos) {
     for (p in puntos) {
-        var numConexions = Math.random() * 4
+        var numConexions = Math.random() * 8 - 4 + 4
         for (var i = 0; i < numConexions; i++) {
             var numAleatorio = parseInt(Math.random() * puntos.lenght)
             var destino = puntos[numAleatorio]
@@ -62,33 +63,62 @@ function conectarConLinhasProximas(contexto, puntos) {
     for (g in puntos) {
         var cont = 0
         var pu = puntos[g]
-        var puntosOrdenados = puntos.sort((a, b) => { pu.calcularDistancia(a) - pu.calcularDistancia(b) })
+        var puntosOrdenados = puntos.sort((a, b) => (pu.calcularDistancia(a) - pu.calcularDistancia(b)))
+        var r = corAleatorio()
+        var g = corAleatorio()
+        var b = corAleatorio()
+        var a = 1
+
         for (p in puntosOrdenados) {
-            var numConexions = parseInt(Math.random() * 4)
+            var numConexions = parseInt(Math.random() * 16 - 4 + 4)
             if (cont >= numConexions) {
                 break
             }
-            dibujaLinea(contexto, pu.x, pu.y, puntos[p].x, puntos[p].y, corAleatorio(), corAleatorio(), corAleatorio(), alfaAleatorio())
+            dibujaLinea(contexto, pu.x, pu.y, puntos[p].x, puntos[p].y, r, g, b, a)
             cont++
         }
     }
 }
+function moverPixeles(puntos) {
+    for (p in puntos) {
+        pu = puntos[p]
 
-function corAleatorio(){
-    return parseInt(Math.random()*255)
+
+        if (Math.round(Math.random() * 7) == 0) { // cando se obteña o cero cambia o angulo
+            novoAngulo = Math.random() * (2 * Math.pi() - 0) + 0
+            pu.angulo = novoAngulo
+        }
+        var vel = Math.random() * ((12 - 0.1) + 0.1)
+        pu.x += vel * Math.cos(pu.angulo)
+        pu.y += ver * Math.sin(pu.angulo)
+    }
 }
 
-function alfaAleatorio(){
+function corAleatorio() {
+    return parseInt(Math.random() * 255)
+}
+
+function alfaAleatorio() {
     return Math.random()
 }
+
+
 var canvas = document.getElementById("canvas2D")
 var contexto = canvas.getContext("2d")
 
 var puntos = []
 puntos = xenerarPuntosAleatorios(100, canvas.width, canvas.height)
 
+setInterval
 
-pintarTodosPixeles(contexto, puntos)
-conectarConLinhasProximas(contexto, puntos)
+function pasos() {
+    contexto.clearRect(0, 0, canvas.width, canvas.height)
+    conectarConLinhasProximas(contexto, puntos)
+    moverPixeles(puntos)
+    pintarTodosPixeles(contexto, puntos)
+}
+
+setInterval(pasos, 1000 / 24)
+
 
 
