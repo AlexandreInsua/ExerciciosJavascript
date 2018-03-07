@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var persona={
+            nombre:"Angel",
+            apellidos:"Gonzalez",
+            direccion:{
+                    pais:"España",
+                    ciudad:"Vigo"
+            }
+        }
+        console.log(persona) // pinta un objeto completo
+        console.log(persona.nombre) // Angel
+        console.log(persona.direccion.pais) // España
+        console.log(persona.direccion) // pinta un subojeto completo
+        console.log(persona.pais) // undefined
+
+        persona.direccion.codigoPostal = 36950
+        console.log(persona.direccion.codigoPostal) // 36950
+
+        var inquilino={
+            nombre:'arturo',
+            apellidos:'ruiz',
+            direccion:{
+                pais:'España',
+                ciudad:'Vigo',
+                casero:{
+                    nombre:'Rubén',
+                    telefono:986334455
+                }
+            }
+        }
+        var elCasero = inquilino.direccion.casero
+        console.log(elCasero)
+        elCasero.email="ruben@ruben.es"
+        console.log(elCasero)
+        console.log(inquilino.direccion.pais) //españa
+        console.log(inquilino.direccion["pais"]) //españa
+    </script>
+</body>
+</html>

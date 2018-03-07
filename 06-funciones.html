@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var a = 30
+        // AS FUNCIÓNS SON OBXECTOS
+        function miPrimeraFuncion(){
+            //var a = 20
+            console.log(a)
+        }
+        miPrimeraFuncion()
+        var a = 40
+
+      
+        function miFuncion(){
+
+        }
+        
+        console.log( miFuncion() )  // undefined
+
+        function otraFuncion(){
+            var a=10
+            console.log(a)
+        }
+        // apuntadoFuncion hace referencia(apunta) a  la  funcion otraFuncion
+        var apuntadoFuncion = otraFuncion
+        apuntadoFuncion()  // pinta 10
+
+
+    </script>
+</body>
+</html>
