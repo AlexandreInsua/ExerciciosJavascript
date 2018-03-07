@@ -6,22 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        div {
+            border: 1px black solid
+        }
+
+        .line {
+            display: inline;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Xogo de preguntas e respostas</h1>
-    <div id="correctas">Ben: 0</div>
-    <div id="erradas">Mal: 1</div>
-    <div id="pregunta">Pregunta: 6-5</div>
+    <div class="line">Ben: </div>
+    <div class="line" id="correctas">0</div>
+    <br>
+    <div class="line">Mal: </div>
+    <div class="line" id="erradas">1</div>
+    <br>
+    <div class="line">Pregunta: </div>
+    <div class="line" id="pregunta">6-5</div>
     <div id="r1">-13</div>
     <div id="r2">1</div>
     <div id="r3">2</div>
     <script>
-        // variables 
+        // variables globais
         var contCorrectas = 0
         var contErradas = 0
-        var resCorrecta
+        var expresionG = crearExpresion()
+        var resCorrecta = evaluarExpresion(expresionG)
+        var erro1  =respostaEquivocada(resCorrecta)
+        var erro2 =respostaEquivocada(resCorrecta)
 
+        // función para os cálculos matemáticos 
         function numeroAleatorio() {
             var num = Math.random() * 10
             return Math.trunc(num)
@@ -51,20 +69,54 @@
             var num1 = numeroAleatorio()
             var signo = signoAleatorio()
             var num2 = numeroAleatorio()
-            var expresion = num1+signo +num2
+            var expresion = num1 + signo + num2
             return expresion
         }
-        
-        function evaluarExpresion (){
-            var expresion = crearExpresion()
-            console.log('Pregunta: ' + expresion) 
+
+        function evaluarExpresion(expresion) {
             var expresionEvaluada = eval(expresion)
-            console.log('Resultado ' + expresionEvaluada)
             return expresionEvaluada
         }
 
-        evaluarExpresion()
+        function respostaEquivocada(resCorrecta) {
+            var aux = numeroAleatorio()
+            var respostaEquivocada
+            var num = Math.trunc(Math.random() * 4 + 1)
+
+            switch (num) {
+                case 1:
+                    respostaEquivocada = resCorrecta + aux
+                    break
+                case 2:
+                    respostaEquivocada = resCorrecta - aux
+                    break
+                case 3:
+                    respostaEquivocada = resCorrecta * aux
+                    break
+                case 4:
+                    respostaEquivocada = resCorrecta / aux
+                    break
+            }
+
+            return respostaEquivocada
+        }
         
+        // funcións para colocar valores nos div
+        document.getElementById('pregunta').innerHTML=expresionG
+        document.getElementById('r1').innerHTML=resCorrecta
+        document.getElementById('r2').innerHTML=erro1
+        document.getElementById('r3').innerHTML=erro2
+
+        // funcións para recuperar os valores das div
+
+var div1 = document.getElementById('r1').nodeValue
+div1.addEventListener("click", capturarResposta(nodeValue))
+
+
+        function capturarResposta(valor){
+            console.log(valor)
+        }        
+
     </script>
 </body>
 
