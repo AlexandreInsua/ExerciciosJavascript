@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Xogo de preguntas e respostas</h1>
+    <div id="correctas">Ben: 0</div>
+    <div id="erradas">Mal: 1</div>
+    <div id="pregunta">Pregunta: 6-5</div>
+    <div id="r1">-13</div>
+    <div id="r2">1</div>
+    <div id="r3">2</div>
+    <script>
+        // variables 
+        var contCorrectas = 0
+        var contErradas = 0
+        var resCorrecta
+
+        function numeroAleatorio() {
+            var num = Math.random() * 10
+            return Math.trunc(num)
+        }
+
+        function signoAleatorio() {
+            var num = Math.trunc(Math.random() * 4 + 1)
+            var signo = ''
+            switch (num) {
+                case 1:
+                    signo = '+'
+                    break
+                case 2:
+                    signo = '-'
+                    break
+                case 3:
+                    signo = '*'
+                    break
+                case 4:
+                    signo = '/'
+                    break
+            }
+            return signo
+        }
+
+        function crearExpresion() {
+            var num1 = numeroAleatorio()
+            var signo = signoAleatorio()
+            var num2 = numeroAleatorio()
+            var expresion = num1+signo +num2
+            return expresion
+        }
+        
+        function evaluarExpresion (){
+            var expresion = crearExpresion()
+            console.log('Pregunta: ' + expresion) 
+            var expresionEvaluada = eval(expresion)
+            console.log('Resultado ' + expresionEvaluada)
+            return expresionEvaluada
+        }
+
+        evaluarExpresion()
+        
+    </script>
+</body>
+
+</html>
